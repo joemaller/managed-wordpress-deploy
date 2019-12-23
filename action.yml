@@ -1,0 +1,16 @@
+name: "Managed WordPress Deploy"
+description: "Bundles some stuff up and deploys it"
+inputs:
+    remote-host:
+        description: "Address of the remote host (SSH)"
+        required: true
+        default: example.com
+outputs:
+    time:
+        description: "no idea what this is for yet"
+
+runs:
+  using: docker
+  image: Dockerfile
+  args: 
+      - ${{ inputs.remote-host }}
